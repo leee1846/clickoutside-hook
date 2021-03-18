@@ -23,6 +23,7 @@ export const OptionContainer = Styled.div`
   border-radius:5px;
   padding:0 10px;
   cursor:pointer;
+  transition:.1s linear;
 
   &:hover {
     box-shadow:0 0 3px 2px lightblue;
@@ -43,16 +44,18 @@ export const OptionContainer = Styled.div`
 
 export const OptionListContainer = Styled.div`
   position:absolute;
-  left:0;
+  width:180px;
+  left:-90px;
   top:35px;
   border:1px solid lightgray;
   border-radius:5px;  
+  transition:.2s linear;
+  opacity:${({ toggle }) => !toggle && "0"};
 `;
 
 export const OptionList = Styled.div`
   display:flex;
   align-items:center;
-  width:180px;
   padding:8px;
 
   &:nth-child(2n){

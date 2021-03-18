@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Styled from "./App.style";
 
 const App = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleOptionToggle = () => {
+    setToggle((prev) => !prev);
+  };
+
   return (
     <>
       <Styled.GlobalStyle />
       <Styled.TotalContainer>
         <Styled.OptionBox>
-          <Styled.OptionContainer>
+          <Styled.OptionContainer onClick={handleOptionToggle}>
             <p>Options</p>
             <i class='fas fa-chevron-down'></i>
           </Styled.OptionContainer>
-          <Styled.OptionListContainer>
+          <Styled.OptionListContainer toggle={toggle}>
             <Styled.OptionList>
               <i class='far fa-edit'></i>
               <span>Edit</span>
