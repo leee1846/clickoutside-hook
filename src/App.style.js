@@ -50,7 +50,8 @@ export const OptionListContainer = Styled.div`
   border:1px solid lightgray;
   border-radius:5px;  
   transition:.2s linear;
-  opacity:${({ toggle }) => !toggle && "0"};
+  /* visibility:${({ toggle }) => !toggle && "hidden"}; */
+  opacity:${({ toggle }) => (!toggle ? "0" : "1")};
 `;
 
 export const OptionList = Styled.div`

@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as Styled from "./App.style";
+import useClickOutside from "./useClickOutside";
 
 const App = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleOptionToggle = () => {
-    setToggle((prev) => !prev);
-  };
+  const [buttonRef, visibleContentRef, visible] = useClickOutside(false);
 
   return (
     <>
       <Styled.GlobalStyle />
       <Styled.TotalContainer>
         <Styled.OptionBox>
-          <Styled.OptionContainer onClick={handleOptionToggle}>
+          <Styled.OptionContainer ref={buttonRef}>
             <p>Options</p>
             <i class='fas fa-chevron-down'></i>
           </Styled.OptionContainer>
-          <Styled.OptionListContainer toggle={toggle}>
+          <Styled.OptionListContainer toggle={visible} ref={visibleContentRef}>
             <Styled.OptionList>
               <i class='far fa-edit'></i>
               <span>Edit</span>
