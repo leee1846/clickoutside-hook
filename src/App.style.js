@@ -4,11 +4,15 @@ export const GlobalStyle = createGlobalStyle`
   margin:0px;
   padding:0;
   box-sizing:border-box;
+  body {
+    background-color:lightblue;
+  }
 `;
 
 export const TotalContainer = Styled.div`
   display:flex;
   justify-content:center;
+  margin:100px 0 ;
 `;
 
 export const OptionBox = Styled.div`
@@ -16,6 +20,7 @@ export const OptionBox = Styled.div`
 `;
 
 export const OptionContainer = Styled.div`
+  background-color:white;
   height:30px;
   display:flex;
   align-items:center;
@@ -43,6 +48,7 @@ export const OptionContainer = Styled.div`
 `;
 
 export const OptionListContainer = Styled.div`
+  background-color:white;
   position:absolute;
   width:180px;
   left:-90px;
